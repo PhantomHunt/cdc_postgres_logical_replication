@@ -1,5 +1,5 @@
 # cdc_postgres_logical_replication
-Code for implementing CDC on postgresql database using pgoutput and test_decoding output plugins using python.
+This is implementation of CDC on postgresql database using pgoutput and test_decoding output plugins using python.
 
 The underlying logic for pgoutput decoder is https://www.postgresql.org/docs/12/protocol-logicalrep-message-formats.html.
 
@@ -14,3 +14,6 @@ Postgresql DB -> postgresql WAL -> cdc_logical_replication_pgoutput.py will brin
 
 2. Test_decoding
 Postgresql DB -> postgresql WAL -> cdc_logical_replication_test_decoding.py will bring the decoded data from WAL.
+
+
+Keywords - #cdc #WAL #postgresql #postgres #logical_replication #test_decoding #pgoutput #pgoutput_decoding #change_data_capture
