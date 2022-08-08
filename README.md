@@ -16,4 +16,4 @@ Postgresql DB -> postgresql WAL -> cdc_logical_replication_pgoutput.py will brin
 Postgresql DB -> postgresql WAL -> cdc_logical_replication_test_decoding.py will bring the decoded data from WAL.
 
 
-Keywords - #cdc #WAL #postgresql #postgres #logical_replication #test_decoding #pgoutput #pgoutput_decoding #change_data_capture
+Keywords - cdc, WAL, postgresql, postgres, logical_replication, test_decoding, pgoutput, pgoutput_decoding, change_data_capture
