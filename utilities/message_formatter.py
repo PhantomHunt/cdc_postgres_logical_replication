@@ -219,7 +219,6 @@ def get_message(data):
                         update_relation_pool(splitted_records,data)
                         return ''
                 elif(operation=='BEGIN'):
-                        print("in begin")
                         update_timestamp(splitted_records)
                         return ''
                 elif(operation=='INSERT'):
@@ -239,8 +238,3 @@ def get_message(data):
         except Exception as error:
                 # print(error)
                 return error
-       
-# def main(data):        
-#         message=get_message(data)
-#         if(message != ''):
-#                 print(message)
