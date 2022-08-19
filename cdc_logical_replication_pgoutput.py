@@ -5,7 +5,7 @@ Created on July 11 2022
 
 import psycopg2
 import time
-from psycopg2.extras import LogicalReplicationConnection, StopReplication
+from psycopg2.extras import LogicalReplicationConnection
 from utilities import message_decoder, message_formatter
 
 def main():                                                                                # Main code of CDC pgoutput
@@ -35,17 +35,14 @@ def main():                                                                     
             print("\nFormatted Message:\n", formatted_message)                              # Decoded message formatted to JSON
             msg.cursor.send_feedback(flush_lsn=msg.data_start)
             print("\n#################### END OF MESSAGE #########################\n\n")
-            # if (time.time() - start_time >= 80):                                          # Incase you want to stop replication 
-            #     raise StopReplication()                                                   # after a certain duration of time
 
-    # start_time = time.time()
     democonsumer = DemoConsumer()
 
     def start_stream():
         cur.consume_stream(democonsumer)
     try:       
         start_stream()
-    except StopReplication: 
+    except: 
         print('\nStopping Replication')
     
 if __name__ == '__main__':
